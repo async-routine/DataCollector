@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Button } from 'react-native';
 import t from 'tcomb-form-native'; // 0.6.9
+
+import { WeatherWidget } from 'react-native-weather';
+
 // import { Auth } from 'aws-amplify';
 
 const Form = t.form.Form;
@@ -44,22 +47,31 @@ export default class App extends Component {
     console.log('value: ', value);
     this.setState({ value: null })
   }
-  
+
   render() {
     return (
       <View style={styles.container}>
-        <Form 
+        <Form
           ref={c => this._form = c} // assign a ref
           type={User}
           value={this.state.value}
-          options={options} 
+          options={options}
         />
 
         <Button
           title="Sign Up!"
           onPress={this.handleSubmit}
         />
+        
+
+        <WeatherWidget
+        api={"4dc6527f121fa835f86ad34a1ae3eb7a"}
+        lat={"33.748997"}
+        lng={"-84.387985"}
+        />
       </View>
+
+
     );
   }
 }
@@ -72,13 +84,3 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
   },
 });
-
-
-
-
-
-
-
-
-
-
