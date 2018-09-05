@@ -7,8 +7,10 @@
     "test": "jest"
   },
   "dependencies": {
+    "firebase": "^5.3.0",
     "react": "16.4.1",
     "react-native": "0.56.0",
+    "react-native-fs": "^2.11.15",
     "react-native-weather": "^0.2.11",
     "tcomb-form-native": "^0.6.16"
   },
